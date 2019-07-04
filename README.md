@@ -1,7 +1,7 @@
 # react-timesheet
 Timesheet application built with React, using [Shards React Dashboard](https://designrevision.com/downloads/shards-dashboard-lite-react/).
 <br/><br/>
-CRUD* application which interacts with REST API to store and retrieve data.
+React CRUD application which interacts with REST API to store and retrieve data*.
 <br/>
 Creates dynamic table to handle timesheet entry. Form fields are dynamically generated on user events.
 
