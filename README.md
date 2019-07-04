@@ -5,6 +5,15 @@ React CRUD application which interacts with REST API to store and retrieve data*
 <br/>
 Creates dynamic table to handle timesheet entry. Form fields are dynamically generated on user events.
 
+# Run
+Clone / download the repository
+<br/>
+npm install
+</br>
+npm start
+</br>
+Visit http://localhost:3000/timesheets
+
 # Features
 Create, view and update timesheet entries for employees in your organization.
 
