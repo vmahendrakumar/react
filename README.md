@@ -6,4 +6,10 @@ Create, view and update timesheet entries for employees in your organization.
 
 Create Timesheet
 
-![Create Timesheet](https://github.com/vmahendrakumar/react-timesheet/raw/master/public/images/screenshots/react_timesheet_home.png)
+![Create Timesheet](https://github.com/vmahendrakumar/react-timesheet/raw/master/public/images/screenshots/react_timesheet_add.png)
+
+View Timesheets
+![View Timesheets](https://github.com/vmahendrakumar/react-timesheet/raw/master/public/images/screenshots/react_timesheet_home.png)
+
+Edit Timesheet
+![Edit Timesheet](https://github.com/vmahendrakumar/react-timesheet/raw/master/public/images/screenshots/react_timesheet_edit.png)
