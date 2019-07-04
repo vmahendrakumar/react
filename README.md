@@ -27,4 +27,4 @@ View Timesheets
 Edit Timesheet
 ![Edit Timesheet](https://github.com/vmahendrakumar/react-timesheet/raw/master/public/images/screenshots/react_timesheet_edit.png)
 
-* Delete operation is not implemented in the current version.
+* \*Delete operation is not implemented in the current version.
