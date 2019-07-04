@@ -3,3 +3,7 @@ Timesheet application built with React, using [Shards React Dashboard](https://d
 
 # Features
 Create, view and update timesheet entries for employees in your organization.
+
+Create Timesheet
+
+![Create Timesheet](https://github.com/vmahendrakumar/react-timesheet/raw/master/public/images/screenshots/react_timesheet_home.png)
