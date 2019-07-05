@@ -15,7 +15,7 @@ npm start
 Visit http://localhost:3000/timesheets
 
 # Features
-Create, view and update timesheet entries for employees in your organization. 
+Create, view and update timesheet entries for employees in your organization.
 
 Create Timesheet
 
