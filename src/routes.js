@@ -54,6 +54,7 @@ export default [
     component: TimesheetReport
   },
   
+  /*
   {
     path: "/blog-overview",
     layout: DefaultLayout,
@@ -89,4 +90,5 @@ export default [
     layout: DefaultLayout,
     component: BlogPosts
   }
+  */
 ];
