@@ -262,8 +262,8 @@ class AddTimesheet extends Component {
 					 <select name={projId} data-id={idx} id={projId} value={rows[idx].project} className="project"
 							onChange={this.handleRowInputChange}>
 						<option>Select Project</option>
-						<option>ERES</option>
-						<option>CAPEX</option>
+						<option>Legal</option>
+						<option>Corporate</option>
 					</select>
 				  </td>
 				  <td>
