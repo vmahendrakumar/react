@@ -21,23 +21,12 @@ class TimesheetReport extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { 
-						startDate: "", endDate: null, sheetStatus: null
+						startDate: "", endDate: "", sheetStatus: "", results:[]
 					 };
 	}
 
 	componentDidMount() {
-			
-			/*
-			axios.get('http://localhost:8090/timesheet/timesheets/32bc036a-4e4e-4094-bb2b-5736e80315b6')
-			.then(res => {
-							console.log(res.data);
-						}
-				)
-			.catch(error => {
-				// TODO Handle API errors
-				console.log('ERROR', error)
-			});
-			*/
+		
 	}
 	
 	handleCancel() {
@@ -45,34 +34,40 @@ class TimesheetReport extends Component {
 	}
 	
 	handleSearch() {
-		let output = this.state;
+		let input = this.state;
 		
-		output.startDate = output.selectedTimePeriod.startDate;
-		output.endDate = output.selectedTimePeriod.endDate;
-		output.userEfforts = output.rows;
+		//input.startDate = input.selectedTimePeriod.startDate;
+		//input.endDate = input.selectedTimePeriod.endDate;
+		//input.userEfforts = input.rows;
 		
-		console.log(output);
+		console.log(input);
 		
-		if(output.id) {
-			axios.put('http://localhost:8090/timesheet/timesheets', output)
+		if(input) {
+			//axios.get('http://localhost:8090/timesheet/reports', {data: input})
+			axios.post('http://localhost:8090/timesheet/reports', input)
 			.then(res => {
 							console.log(res.data);
-							//if(input === 2)
-								this.props.history.push('timesheets');
+							this.setState({results: res.data.timesheetReports});
 						}
 				)
 			.catch(error => {
 				// TODO Handle API errors
 				console.log('ERROR', error)
 			})
-		}		
+		}
+		
 	}
   
-  handleInputChange = (e) => {}
+  handleStartDateChange = (e) => {		
+	  this.setState({startDate: e.target.value});
+  }
+  
+  handleEndDateChange = (e) => {		
+	  this.setState({endDate: e.target.value});
+  }
  
 	render() {
-	const { startDate, endDate, sheetStatus } = this.state;
-		//let tempDate = new Date(this.state.tempDate);
+	const { startDate, endDate, sheetStatus, results } = this.state;
 
 
 		return (
@@ -94,19 +89,56 @@ class TimesheetReport extends Component {
           <CardBody className="p-0 pb-3">
 			<br/>
             <Row form>
-				<Col md="2" className="form-group">
-					Start Date:
+				<Col md="3" className="form-group">
+					Start Date* (yyyy-mm-dd):
 				</Col>
 				<Col md="2" className="form-group">
-					<input type="date" value={startDate} onChange={this.handleInputChange} />
+					<input type="text" value={startDate} onChange={this.handleStartDateChange} />
 				</Col>
 			</Row>
 			<Row form>
-				<Col md="2" className="form-group">
-					End Date:
+				<Col md="3" className="form-group">
+					End Date* (yyyy-mm-dd):
 				</Col>
 				<Col md="2" className="form-group">
-					<input type="date" value={endDate} onChange={this.handleInputChange} />
+					<input type="text" value={endDate} onChange={this.handleEndDateChange} />
+				</Col>
+			</Row>
+			<Row form>
+				<Col>
+				<br/>
+					<ReactTable data={results}
+										columns={[
+            {
+              Header: "User",
+			  accessor: "memberId",
+			  //id: "lastName"
+            },
+			{
+              Header: "Project",
+			  accessor: "project"
+            },
+            {
+              Header: "Task",
+			  accessor: "task"
+            },
+            {
+              Header: 'Comment',
+			  accessor: "comment"
+            },
+			{
+              Header: 'Date',
+			  accessor: "entryDate"
+            },
+			{
+              Header: 'Hours',
+			  accessor: "hours"
+            }
+          ]}
+          defaultPageSize={10}
+          className="-striped -highlight"
+        />
+		<br/>
 				</Col>
 			</Row>
 			<Row form>

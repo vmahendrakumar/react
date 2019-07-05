@@ -55,10 +55,7 @@ class Timesheets extends Component {
 								</CardHeader>
 								<CardBody className="p-0 pb-3">
 									<br/>
-									<Button color="success" className="px-4" onClick={() => { this.handleCreate() }}>Create</Button>
-									<table>
-									</table>
-									
+									<Button color="success" className="px-4" onClick={() => { this.handleCreate() }}>Create</Button>							
 									<br/>
 									
 									<ReactTable data={timesheets}
